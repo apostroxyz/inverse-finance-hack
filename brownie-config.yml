@@ -1,0 +1,12 @@
+# automatically fetch contract sources from Etherscan
+autofetch_sources: True
+dotenv: .env
+
+reports:
+
+networks:
+  default: eth-main-alchemy-fork
+
+compiler:
+  solc:
+    version: 0.8.13

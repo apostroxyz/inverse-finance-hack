@@ -1,0 +1,16 @@
+{
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "commitizen": "^4.2.4",
+    "ethlint": "^1.2.5",
+    "husky": "7.0.4",
+    "lint-staged": "12.1.3",
+    "prettier": "2.5.1",
+    "prettier-plugin-solidity": "^1.0.0-alpha.57",
+    "pretty-quick": "^3.0.2"
+  },
+  "scripts": {
+    "hack": "brownie run hack_inverse_finance.py -I"
+  }
+}

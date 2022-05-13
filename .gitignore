@@ -1,0 +1,23 @@
+.vscode
+# Brownie
+__pycache__
+.history
+.hypothesis/
+build/
+reports/
+.env
+cache/
+artifacts/
+OpenZeppelin/
+out/
+lib/
+yearn/
+addresses/*fork.json
+.pytest_cache
+
+# Node/npm
+node_modules/
+node_modules/.yarn-integrity
+
+# Poetry
+poetry.lock

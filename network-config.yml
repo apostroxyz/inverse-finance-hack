@@ -1,0 +1,15 @@
+development:
+  - name: Ganache-CLI (Ethereum Alchemy Fork)
+    id: eth-main-alchemy-fork
+    cmd: ganache
+    host: http://127.0.0.1
+    explorer: https://api.etherscan.io/api
+    timeout: 120
+    cmd_settings:
+      port: 8545
+      gas_limit: 20000000
+      accounts: 10
+      evm_version: istanbul
+      mnemonic: brownie
+      fork: https://eth-mainnet.alchemyapi.io/v2/$WEB3_ALCHEMY_PROJECT_ID@14506357
+      chain_id: 1
