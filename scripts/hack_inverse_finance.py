@@ -1,4 +1,4 @@
-from brownie import accounts, chain, Contract
+from brownie import accounts, chain, Contract, web3
 
 # Swap 500 ETH to INV in #14506358 https://etherscan.io/tx/0x20a6dcff06a791a7f8be9f423053ce8caee3f9eecc31df32445fc98d4ccd8365
 # Hack Inverse in #14506359 https://etherscan.io/tx/0x600373f67521324c8068cfd025f121a0843d57ec813411661b07edc5ff781842
@@ -50,6 +50,26 @@ def print_prices():
     # print('4 >>', inv_weth_pair.getReserves())
     # print('5 >>', inv_weth_pair.price0CumulativeLast())
     # print('6 >>', inv_weth_pair.price1CumulativeLast())
+    print('')
+
+
+def print_user_portfolio(user):
+    print(f'Portfolio of {user.address}:')
+    print(f'- INV:    {format_amount(inv.balanceOf(user), inv.decimals())}')
+    print(f'- DOLA:   {format_amount(dola.balanceOf(user), dola.decimals())}')
+    print(f'- WBTC:   {format_amount(wbtc.balanceOf(user), wbtc.decimals())}')
+    print(f'- ETH:    {format_amount(web3.eth.getBalance(user.address), 18)}')
+    print(f'- YFI:    {format_amount(yfi.balanceOf(user), yfi.decimals())}')
+    print('')
+
+
+def print_protocol_portfolio():
+    print('Inverse Finance Portfolio:')
+    print(f'- INV:    {format_amount(xinv.getCash(), inv.decimals())}')
+    print(f'- DOLA:   {format_amount(andola.getCash(), dola.decimals())}')
+    print(f'- WBTC:   {format_amount(anwbtc.getCash(), wbtc.decimals())}')
+    print(f'- ETH:    {format_amount(aneth.getCash(), 18)}')
+    print(f'- YFI:    {format_amount(anyfi.getCash(), yfi.decimals())}')
     print('')
 
 
